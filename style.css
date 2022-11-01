@@ -1,0 +1,209 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --ff-roboto-Mono: 'Roboto Mono', sans-serif;
+    --ff-roboto: 'Roboto', sans-serif;
+    --fc-primary: #ffffff;
+    --fc-secundary: #E1E1E6;
+    --fc-third: hsla(189, 4%, 32%, 1);
+    --cb-table: hsla(191, 31%, 42%, 1);
+    --cb-head: hsla(194, 72%, 13%, 1);
+    --bg-table-empty: #030B0D;
+    --bg-table-even: #06181C;
+}
+
+body {
+    font-size: 1.6rem;
+    background: #000000;
+    width: 112rem;
+    margin: 11.5rem auto;
+}
+
+body * {
+    font-family: var(--ff-roboto);
+    color: var(--fc-primary);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+}
+
+.logo h1 {
+    font-family: var(--ff-roboto-Mono);
+}
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .8rem;
+}
+
+.search input {
+    width: 46.2rem;
+    height: 4.8rem;
+
+    border-radius: .5rem;
+    border: none;
+    background: #06181C;
+
+    padding-left: 1.6rem;
+}
+
+.search input::placeholder{
+    color: #7C7C8A;
+    font-family: var(--ff-roboto);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.search button {
+    background: #065E7C;
+    display: flex;    
+    align-items: center;
+    gap: .8rem;
+    padding: 1.2rem 3.2rem;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+
+    border-radius: .5rem;
+}
+
+.table {
+    border: 1px solid var(--cb-table);
+    border-radius: 1.2rem;
+    margin-top: 8.7rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Faz com que seja removido os espaços da borda da tabela */
+}
+
+table * {
+    font-family: var(--ff-roboto);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 160%;
+}
+
+.table-empty {
+    width: 100%;
+    height: 62.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+
+    font-family: var(--ff-roboto-Mono);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 25px;
+    color: var(--fc-third);
+
+    background: var(--bg-table-empty);
+    border-radius: 0 0 1.2rem 1.2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+table th {
+    padding: 1.6rem 0 1.6rem 4rem;
+    background: var(--cb-head);
+    text-align: left;
+}
+
+table th:first-child {
+    border-top-left-radius: 1.2rem;
+    width: 50.4rem;
+}
+
+table th:nth-child(2),
+table th:nth-child(3)  {
+    width: 22rem;
+}
+
+table thead th:last-child {
+    border-top-right-radius: 1.2rem;
+}
+
+.remove {
+    background: none;
+    border: none;
+    
+    color: #F75A68;
+}
+
+table td {
+    padding: 1.6rem 0 1.6rem 4rem;
+    text-align: left;
+    height: 10.4rem;
+}
+
+table thead td:first-child {
+    border-top-left-radius: 1.2rem;
+    width: 50.4rem;
+}
+
+table td:nth-child(2),
+table td:nth-child(3)  {
+    width: 22rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;  
+}
+
+.user a {
+    text-decoration: none;
+}
+
+.user img {
+    height: 5.6rem;
+    border-radius: 50%;
+}
+
+.user span {
+    font-weight: 400;
+}
+
+table tr:nth-child(even):not(tr:last-child){
+    background: var(--bg-table-even);
+    
+}
+
+table tbody tr:last-child:nth-child(even) td:first-child {
+    background: var(--bg-table-even);
+    border-bottom-left-radius: 1.2rem;
+}
+
+table tbody tr:last-child:nth-child(even) td:last-child {
+    background: var(--bg-table-even);
+    border-bottom-right-radius: 1.2rem;
+}
+
+table tbody tr:last-child:nth-child(even) td:nth-child(2),
+table tbody tr:last-child:nth-child(even) td:nth-child(3){
+    background: var(--bg-table-even);
+}
