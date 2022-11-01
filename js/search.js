@@ -1,4 +1,4 @@
-
+import { GithubUser } from "./GithubUser.js"
 export class UserFav {
     constructor(source){
         this.source = document.querySelector(source)
@@ -19,14 +19,14 @@ export class UserFav {
                 throw new Error('Por favor preencha o campo!')
             } else {
                 if(this.users === undefined){
-                    const user = await this.search(value)
+                    const user = await GithubUser.search(value)
                     this.userCheck(user)
                 } else {
                     const userExists = this.users.find(user => user.login === value)
                     if (userExists){
                         throw new Error('Usuário já cadastrado!')
                     } else {
-                        const user = await this.search(value)
+                        const user = await GithubUser.search(value)
                         this.userCheck(user)
                     }
                 }
@@ -37,10 +37,7 @@ export class UserFav {
 
     }
 
-    search(userId) {
-        const dateUser = `https://api.github.com/users/${userId}`
-        return fetch(dateUser).then(data => data.json()).then( ({login, name, public_repos, followers}) => ({login,name, public_repos, followers}))          
-    }
+    
 
 }
 
